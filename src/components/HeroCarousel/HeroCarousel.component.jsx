@@ -1,19 +1,21 @@
 import React from "react";
 import HeroSlider from "react-slick";
 
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// arrow components
+import{ NextArrow, PrevArrow} from "./arrows.components";
+
 const HeroCarousel=()=>{
 
   const settingsLG ={        //pc screen
 arrows:true,
 autoplay:true,
 centerMode:true,
-centerPadding:"300px",
+//centerPadding:"300px",
 slidesToShow:1,
 infinite: true, 
-slidesToScroll: 1
+slidesToScroll: 1,
+nextArrow:<NextArrow/>,
+prevArrow:<PrevArrow/>,
   };
 
   const  settings = {       //mobile and medium devices
@@ -22,14 +24,14 @@ slidesToScroll: 1
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        nextArrow:<NextArrow/>,
+         prevArrow:<PrevArrow/>,
       };
 const images= [
-  "https://images.unsplash.com/photo-1632972116290-7e8fe8f5ab8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1632934376531-544b3614b2f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1632944967234-40fbb88bf7f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
-  "https://images.unsplash.com/photo-1633010999948-35292e91f596?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80"
-
+  "https://in.bmscdn.com/promotions/cms/creatives/1633111436032_sunburn_cruise_webshowcase_1240x300_1oct.jpg",
+  "https://in.bmscdn.com/promotions/cms/creatives/1633099172106_bas_oct21_finalbannerweb1240x300.png",
+  "https://in.bmscdn.com/promotions/cms/creatives/1633168004624_indusindcreditcardofferbannerswebshowcase_1240x300.jpg",
 ];
 return  (
 <>

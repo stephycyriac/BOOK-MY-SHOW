@@ -6,11 +6,15 @@ import React from "react";
 //components
 import Navbar from "../components/Navbar/navbar.component";
 import HeroCarousel from "../components/HeroCarousel/HeroCarousel.component";
+import EntertainmentCardSlider from "../components/entertainment/entertainmentcard.component";
+import HomePage from "../Pages/home.page";
 const DefaultLayout =(props) =>{
    return (          //navbar above props.children
    <>
         <Navbar/>  
             <HeroCarousel/>
+          
+          <HomePage/>
         {props.childern} 
    </>
    );
