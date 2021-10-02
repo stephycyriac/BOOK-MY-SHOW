@@ -2,12 +2,18 @@
 
 import React from "react";
 
-const DefaultLayout =() =>{
-    return(
-    <div>
-        <h1 className="text-xl">Default Layout</h1>
-    </div>
-    );
+
+//components
+import Navbar from "../components/Navbar/navbar.component";
+import HeroCarousel from "../components/HeroCarousel/HeroCarousel.component";
+const DefaultLayout =(props) =>{
+   return (          //navbar above props.children
+   <>
+        <Navbar/>  
+            <HeroCarousel/>
+        {props.childern} 
+   </>
+   );
 };
 
 export default DefaultLayout;

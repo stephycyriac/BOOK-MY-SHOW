@@ -1,13 +1,20 @@
 import React from "react";
-import { Route } from "react-router-dom ";
+import { Route } from "react-router-dom";
 
 //layout
-import DefaultLayout from "../layouts/default.layout";
+import DefaultLayout from "../layouts/Default.layout";
 
-const DefaultHOC =({component,...props})=>{ //defining what all are we accepting
+const DefaultHOC =({component:Component, ...rest})=>{ //defining what all are we accepting
 return(                    // ...spread operator
     <>
-    <Route{...props }/> 
+    <Route
+    {...rest}
+    component = {(props)=>(
+        <DefaultLayout>
+            <Component {...props}/> 
+            </DefaultLayout> 
+    )}
+    />
     </>
 );
 };
