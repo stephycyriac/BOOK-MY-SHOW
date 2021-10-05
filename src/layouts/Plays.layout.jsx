@@ -11,6 +11,7 @@ const PlaysLayout = (props) => {
          <Navbar/>
          <HeroCarousel/>
           <Plays/>  
+         
           {props.childern} 
         </>
     )

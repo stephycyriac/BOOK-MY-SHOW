@@ -47,11 +47,24 @@ const Plays = () => {
                     <div className="lg:w-3/12"> 
                     <h2 className="text-2xl font-bold mb-4 ">Filters</h2>
                    <div>
-<PlaysFilter/>
+                        <PlaysFilter 
+                        title="Date" tags={["Today","Tomorrow","This Weekend"]} />
+                         <PlaysFilter 
+                        title="Language" tags={["Tamil","English","Malayalam"]} />
+                         <PlaysFilter 
+                        title="Categories" tags={["Theatre"]} />
+                         <PlaysFilter 
+                        title="Genres" tags={["Drama","Comedy"]} />
+                         <PlaysFilter 
+                        title="More Filters" tags={["Online Streaming","Outdoor Events"]} />
+                         <PlaysFilter 
+                        title="Price" tags={["Free","0-500","501-2000","Above 2000"]} />
                    </div>
-                    </div>
+                   <div className="border-2 border-red-400 py-1 mt-4 rounded-md" >
+                       <h4 className="text-red-400 text-center">Browse by Venue</h4>
+                   </div>
+                 </div>
                 </div>
-              
             </div>
         </>
     );
