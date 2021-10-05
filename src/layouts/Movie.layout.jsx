@@ -1,13 +1,14 @@
 import React from 'react';
 
 //components
-import Navbar from "../components/Navbar/navbar.component";
+import MovieNavbar from '../components/Navbar/MovieNavbar.component';
+import MoviePage from "../Pages/Movie.page";
 
  const MovieLayout = (props) => {
     return (
         <>
-             <Navbar/>  
-            
+             <MovieNavbar/>  
+             <MoviePage/>
         {props.childern} 
         </>
     );
