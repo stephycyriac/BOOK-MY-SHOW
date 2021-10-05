@@ -20,7 +20,6 @@ prevArrow:<PrevArrow/>,
 
   const  settings = {       //mobile and medium devices
         arrows:true, 
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,

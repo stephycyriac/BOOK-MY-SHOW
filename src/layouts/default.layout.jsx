@@ -14,8 +14,6 @@ const DefaultLayout =(props) =>{
         <Navbar/>  
             <HeroCarousel/>
             <HomePage/>
-
-
         {props.childern} 
    </>
    );
