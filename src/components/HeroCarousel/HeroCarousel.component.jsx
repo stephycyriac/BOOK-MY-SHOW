@@ -1,11 +1,21 @@
-import React from "react";
+import React,{useState ,useEffect} from "react";
 import HeroSlider from "react-slick";
-
+import axios from "axios";
 // arrow components
 import{ NextArrow, PrevArrow} from "./arrows.components";
 
 const HeroCarousel=()=>{
 
+const [images , setImages] = useState([]);
+useEffect(()=> {
+const requestNowPlayingMovies = async () => {
+  const getImages = await axios.get("/movie/now_playing");
+  setImages(getImages.data.results);
+};
+
+requestNowPlayingMovies();
+
+},[] )
   const settingsLG ={        //pc screen
 arrows:true,
 autoplay:true,
@@ -27,18 +37,14 @@ prevArrow:<PrevArrow/>,
         nextArrow:<NextArrow/>,
          prevArrow:<PrevArrow/>,
       };
-const images= [
-  "https://in.bmscdn.com/promotions/cms/creatives/1633111436032_sunburn_cruise_webshowcase_1240x300_1oct.jpg",
-  "https://in.bmscdn.com/promotions/cms/creatives/1633099172106_bas_oct21_finalbannerweb1240x300.png",
-  "https://in.bmscdn.com/promotions/cms/creatives/1633168004624_indusindcreditcardofferbannerswebshowcase_1240x300.jpg",
-];
+
 return  (
 <>
 <div className="lg:hidden">  {/*for mobile and medium devices */}
 <HeroSlider {...settings}>
   {images.map((image)=> (
     <div className="w-full  h-60 md:h-96 py-3">
-      <img src ={image} alt="testing" className="w-full h-full "/>
+      <img src ={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing" className="w-full h-full "/>
 
     </div>
   ))}
@@ -50,8 +56,8 @@ return  (
 <HeroSlider {...settingsLG}>
   {images.map((image)=> (
     <div className="w-full h-96 px-2 py-3 rounded-lg">
-      <img src ={image} alt="testing" className="w-full h-full"/>
-
+      <img src ={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing" className="w-full h-full"/>
+               {/* base url from tmdb for images  */}
     </div>
   ))}
 </HeroSlider>
