@@ -4,8 +4,9 @@ import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 
+
 //context provider
-import MovieProvider from "./context/movie.context"
+import MovieProvider from './contexs/movie.context';
 
 ReactDOM.render(
   <React.StrictMode>

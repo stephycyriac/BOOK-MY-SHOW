@@ -5,6 +5,7 @@ import React, {useState,useEffect} from "react";
 
 import EntertainmentCardSlider from "../components/entertainment/entertainmentcard.component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.components";
+
 //config
 import TempPosters from "../config/TempPosters.config";
 
